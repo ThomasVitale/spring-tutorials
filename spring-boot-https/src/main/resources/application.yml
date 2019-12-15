@@ -1,0 +1,14 @@
+server:
+  ssl:
+    # The path to the key store that holds the SSL certificate (a jks or p12 file).
+    key-store: classpath:keystore.p12
+    # The password used to access the key store.
+    key-store-password: password
+    # The type of the key store.
+    key-store-type: pkcs12
+    # The alias that identifies the key in the key store.
+    key-alias: tomcat
+    # The password used to access the key in the key store.
+    key-password: password
+  # The port this server is listening on
+  port: 8443
