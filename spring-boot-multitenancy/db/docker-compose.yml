@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  database:
+    image: "postgres"
+    environment:
+      - POSTGRES_USER=james_bond
+      - POSTGRES_PASSWORD=secret_password
+      - POSTGRES_DB=secret_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data/
+volumes:
+  db-data:
