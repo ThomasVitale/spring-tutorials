@@ -1,0 +1,23 @@
+# Spring Boot
+spring:
+  # Data Source
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/secret_database
+    username: james_bond
+    password: secret_password
+    hikari:
+      maximum-pool-size: 5
+      initialization-fail-timeout: 0
+  # JPA/Hibernate
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: none
+      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+
+# Multitenancy
+multitenancy:
+  http-header: X-TenantId
+  default-tenant-id: MASTER
