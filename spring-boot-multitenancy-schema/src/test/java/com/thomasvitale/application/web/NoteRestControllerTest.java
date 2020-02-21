@@ -28,7 +28,7 @@ public class NoteRestControllerTest {
     private String tenantHeader;
 
     @Test
-    public void getOrganizationsForTenantAcme() throws JSONException {
+    public void getNotesForTenantAcme() throws JSONException {
         HttpHeaders headers = new HttpHeaders();
         headers.add(tenantHeader, "TENANT_ACME");
         HttpEntity<String> entity = new HttpEntity<>(null, headers);
@@ -45,7 +45,7 @@ public class NoteRestControllerTest {
     }
 
     @Test
-    public void getOrganizationsForTenantArgus() throws JSONException {
+    public void getNotesForTenantArgus() throws JSONException {
         HttpHeaders headers = new HttpHeaders();
         headers.add(tenantHeader, "TENANT_ARGUS");
         HttpEntity<String> entity = new HttpEntity<>(null, headers);
