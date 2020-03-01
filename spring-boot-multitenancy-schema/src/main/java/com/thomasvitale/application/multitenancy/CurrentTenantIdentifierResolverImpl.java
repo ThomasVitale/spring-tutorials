@@ -1,7 +1,7 @@
 package com.thomasvitale.application.multitenancy;
 
 import org.hibernate.context.spi.CurrentTenantIdentifierResolver;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
@@ -12,12 +12,16 @@ import java.util.Objects;
 @Component
 public class CurrentTenantIdentifierResolverImpl implements CurrentTenantIdentifierResolver {
 
-    @Value("${multitenancy.default-tenant-id}")
-    private String defaultTenantIdentifier;
+    private final MultitenancyProperties multitenancyProperties;
+
+    @Autowired
+    public CurrentTenantIdentifierResolverImpl(MultitenancyProperties multitenancyProperties) {
+        this.multitenancyProperties = multitenancyProperties;
+    }
 
     @Override
     public String resolveCurrentTenantIdentifier() {
-        return Objects.requireNonNullElse(TenantContext.getCurrentTenant(), defaultTenantIdentifier);
+        return Objects.requireNonNullElse(TenantContext.getCurrentTenant(), multitenancyProperties.getDefaultTenantId());
     }
 
     @Override

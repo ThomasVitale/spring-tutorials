@@ -1,19 +1,18 @@
-# Spring Boot
 spring:
-  # Data Source
   datasource:
     platform: postgres
-    url: jdbc:postgresql://localhost:5432/secret_database
-    username: james_bond
-    password: secret_password
+    url: jdbc:postgresql://localhost:5432/${DB_NAME:secret_database}
+    username: ${DB_USERNAME:james_bond}
+    password: ${DB_PASSWORD:secret_password}
     hikari:
       maximum-pool-size: 5
       initialization-fail-timeout: 0
-  # JPA/Hibernate
+  flyway:
+    enabled: true
   jpa:
     database: postgresql
     hibernate:
-      ddl-auto: none
+      ddl-auto: validate
       naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
 

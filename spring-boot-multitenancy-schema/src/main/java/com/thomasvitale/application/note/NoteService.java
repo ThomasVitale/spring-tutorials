@@ -1,6 +1,5 @@
-package com.thomasvitale.application.business;
+package com.thomasvitale.application.note;
 
-import com.thomasvitale.application.data.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

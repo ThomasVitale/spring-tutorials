@@ -1,4 +1,4 @@
-package com.thomasvitale.application.data;
+package com.thomasvitale.application.note;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

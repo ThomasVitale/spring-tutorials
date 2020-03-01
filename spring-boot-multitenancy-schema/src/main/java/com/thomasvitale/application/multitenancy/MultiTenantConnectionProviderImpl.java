@@ -3,7 +3,6 @@ package com.thomasvitale.application.multitenancy;
 import org.hibernate.HibernateException;
 import org.hibernate.engine.jdbc.connections.spi.MultiTenantConnectionProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
@@ -18,13 +17,12 @@ import java.sql.Statement;
 @Component
 public class MultiTenantConnectionProviderImpl implements MultiTenantConnectionProvider {
     private final transient DataSource dataSource;
-
-    @Value("${multitenancy.default-tenant-id}")
-    private String defaultTenantIdentifier;
+    private final transient MultitenancyProperties multitenancyProperties;
 
     @Autowired
-    public MultiTenantConnectionProviderImpl(DataSource dataSource) {
+    public MultiTenantConnectionProviderImpl(DataSource dataSource, MultitenancyProperties multitenancyProperties) {
         this.dataSource = dataSource;
+        this.multitenancyProperties = multitenancyProperties;
     }
 
     @Override
@@ -54,7 +52,7 @@ public class MultiTenantConnectionProviderImpl implements MultiTenantConnectionP
     public void releaseConnection(String tenantIdentifier, Connection connection) throws SQLException {
         try (Statement statement = connection.createStatement()) {
             // SQL statement specific for PostgreSQL
-            statement.execute(String.format("SET search_path to %s;", defaultTenantIdentifier));
+            statement.execute(String.format("SET search_path to %s;", multitenancyProperties.getDefaultTenantId()));
         } catch (SQLException ex) {
             // Throw an exception to make sure the connection is not returned to the pool,
             // when not possible to reset the tenant schema usage.

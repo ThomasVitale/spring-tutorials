@@ -1,4 +1,4 @@
-package com.thomasvitale.application.multitenancy;
+package com.thomasvitale.application.config;
 
 import com.thomasvitale.application.Application;
 import org.hibernate.MultiTenancyStrategy;
@@ -22,11 +22,11 @@ import java.util.Map;
  * to support multitenancy.
  */
 @Configuration
-public class JpaConfig {
+public class HibernateConfig {
     private final JpaProperties jpaProperties;
 
     @Autowired
-    public JpaConfig(JpaProperties jpaProperties) {
+    public HibernateConfig(JpaProperties jpaProperties) {
         this.jpaProperties = jpaProperties;
     }
 
