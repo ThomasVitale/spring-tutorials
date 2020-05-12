@@ -11,3 +11,8 @@ The repo for my articles, tutorials and guides about the Spring Framework.
 
 * Article: _Work in progress_
 * Project: [`spring-boot-multitenancy`](https://github.com/ThomasVitale/spring-tutorials/tree/master/spring-boot-multitenancy)
+
+## Centralized Configuration with Spring Cloud Config
+
+* Article: [Centralized Configuration with Spring Cloud Config](https://www.thomasvitale.com/spring-cloud-config-basics/)
+* Project: [`spring-cloud-config`](https://github.com/ThomasVitale/spring-tutorials/tree/master/spring-cloud-config)
