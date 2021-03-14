@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  spring-native-graalvm:
+    image: "spring-native-graalvm:1.0.0"
+    container_name: "spring-native-graalvm"
+    ports:
+      - 8080:8080

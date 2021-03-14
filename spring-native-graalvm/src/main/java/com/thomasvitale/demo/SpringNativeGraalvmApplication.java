@@ -8,20 +8,20 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
-import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
 @SpringBootApplication
-public class DemoApplication {
+public class SpringNativeGraalvmApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(SpringNativeGraalvmApplication.class, args);
 	}
 
 	@Bean
 	RouterFunction<ServerResponse> routes() {
-		return route(GET("/"), request ->
-				ok().body(Mono.just("Spring Native and Beyond!"), String.class));
+		return route()
+				.GET("/", request -> ok().body(Mono.just("Spring Native and Beyond!"), String.class))
+				.build();
 	}
 }

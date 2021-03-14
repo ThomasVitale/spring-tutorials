@@ -4,4 +4,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'spring-native-image-graalvm'
+rootProject.name = 'spring-native-graalvm'

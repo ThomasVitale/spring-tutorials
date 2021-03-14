@@ -27,5 +27,4 @@ test {
 bootBuildImage {
 	builder = 'paketobuildpacks/builder:tiny'
 	environment = ['BP_NATIVE_IMAGE': 'true']
-	imageName = "thomasvitale/${project.name}:${project.version}"
 }
