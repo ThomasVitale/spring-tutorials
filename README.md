@@ -16,3 +16,8 @@ The repo for my articles, tutorials and guides about the Spring Framework.
 
 * Article: [Centralized Configuration with Spring Cloud Config](https://www.thomasvitale.com/spring-cloud-config-basics/)
 * Project: [`spring-cloud-config`](https://github.com/ThomasVitale/spring-tutorials/tree/master/spring-cloud-config)
+
+## Spring Native: Getting started with GraalVM native images
+
+* Article: [Spring Native: Getting started with GraalVM native images](https://www.thomasvitale.com/spring-native-graalvm-getting-started/)
+* Project: [`spring-native-graalvm`](https://github.com/ThomasVitale/spring-tutorials/tree/master/spring-native-graalvm)
