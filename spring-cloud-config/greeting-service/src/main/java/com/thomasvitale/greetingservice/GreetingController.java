@@ -16,4 +16,5 @@ public class GreetingController {
     public String getGreeting() {
         return greeting;
     }
+
 }

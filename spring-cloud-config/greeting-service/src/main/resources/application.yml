@@ -1,6 +1,17 @@
 server:
   port: 8080
+
 greeting: "Hello Local!"
+
+spring:
+  application:
+    name: greeting-service
+  config:
+    import: "optional:configserver:"
+  cloud:
+    config:
+      uri: http://localhost:8888
+
 management:
   endpoints:
     web:
