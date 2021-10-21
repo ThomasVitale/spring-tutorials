@@ -33,3 +33,8 @@ dependencyManagement {
 test {
     useJUnitPlatform()
 }
+
+bootBuildImage {
+    imageName = "thomasvitale/${project.name}:${project.version}"
+    environment = ["BP_JVM_VERSION" : "17.*"]
+}
