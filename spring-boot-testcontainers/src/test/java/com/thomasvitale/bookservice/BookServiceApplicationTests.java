@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-@Import(TestEnvironmentConfiguration.class)
+@Import(TestBookServiceApplication.class)
 class BookServiceApplicationTests {
 
 	@Autowired
