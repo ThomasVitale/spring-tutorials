@@ -14,7 +14,7 @@ public class TestBookServiceApplication {
   @RestartScope
   @ServiceConnection
   PostgreSQLContainer<?> postgreSQLContainer() {
-    return new PostgreSQLContainer<>("postgres:15");
+    return new PostgreSQLContainer<>("postgres:17");
   }
   
   public static void main(String[] args) {

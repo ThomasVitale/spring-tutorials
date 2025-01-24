@@ -11,7 +11,7 @@ class TestEnvironmentConfiguration {
     @Bean
     @ServiceConnection
     PostgreSQLContainer<?> postgreSQLContainer() {
-      return new PostgreSQLContainer<>("postgres:15");
+      return new PostgreSQLContainer<>("postgres:17");
     }
 
 }
